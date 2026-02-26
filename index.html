@@ -1330,5 +1330,91 @@ document.getElementById('legalModal').addEventListener('click', function(e){
         document.getElementById('listings-modal').addEventListener('click',function(e){if(e.target===this)closeListingsModal();});
         document.addEventListener('keydown',function(e){if(e.key==='Escape')closeListingsModal();});
     </script>
+
+        <!-- Google Sheets Signup Integration -->
+    <script>
+    (function(){
+      var SHEET_URL = 'https://script.google.com/macros/s/AKfycbwbewnyt9iljNsdnh-Sv0WETfn98db94jcLPUU8T9pforr_Sw7ILQtSAtilIgQHFTRO/exec';
+
+      function sendToSheet(data) {
+        fetch(SHEET_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        }).catch(function(err) { console.log('Sheet error:', err); });
+      }
+
+      // 1. Free Home Valuation form
+      var valForm = document.querySelector('.valuation-form form');
+      if (valForm) {
+        valForm.addEventListener('submit', function(e) {
+          var inputs = valForm.querySelectorAll('input');
+          var fullName = inputs[0] ? inputs[0].value : '';
+          var parts = fullName.split(' ');
+          sendToSheet({
+            firstName: parts[0] || '',
+            lastName: parts.slice(1).join(' ') || '',
+            email: inputs[1] ? inputs[1].value : '',
+            phone: inputs[2] ? inputs[2].value : '',
+            interestedIn: 'Free Home Valuation',
+            goals: inputs[3] ? 'Property: ' + inputs[3].value : '',
+            signupSource: 'Free Home Valuation',
+            city: ''
+          });
+        });
+      }
+
+      // 2. Contact / Send Me a Message form
+      var contactForm = document.querySelector('.contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          var inputs = contactForm.querySelectorAll('input');
+          var select = contactForm.querySelector('select');
+          var textarea = contactForm.querySelector('textarea');
+          sendToSheet({
+            firstName: inputs[0] ? inputs[0].value : '',
+            lastName: inputs[1] ? inputs[1].value : '',
+            email: inputs[2] ? inputs[2].value : '',
+            phone: inputs[3] ? inputs[3].value : '',
+            interestedIn: select ? select.value : '',
+            goals: textarea ? textarea.value : '',
+            signupSource: 'Send Me a Message',
+            city: ''
+          });
+        });
+      }
+
+      // 3. City Modal signup form
+      var modalForm = document.querySelector('#modal-signup-view form, .modal-signup-view form');
+      if (!modalForm) {
+        var allForms = document.querySelectorAll('form');
+        for (var i = 0; i < allForms.length; i++) {
+          if (allForms[i].querySelector('#modal-name')) { modalForm = allForms[i]; break; }
+        }
+      }
+      if (modalForm) {
+        modalForm.addEventListener('submit', function(e) {
+          var nameEl = document.getElementById('modal-name');
+          var phoneEl = document.getElementById('modal-phone');
+          var emailEl = document.getElementById('modal-email');
+          var fullName = nameEl ? nameEl.value : '';
+          var parts = fullName.split(' ');
+          var cityEl = document.querySelector('.modal-city-name, [class*="city"]');
+          var cityText = cityEl ? cityEl.textContent.trim() : '';
+          sendToSheet({
+            firstName: parts[0] || '',
+            lastName: parts.slice(1).join(' ') || '',
+            email: emailEl ? emailEl.value : '',
+            phone: phoneEl ? phoneEl.value : '',
+            interestedIn: '',
+            goals: '',
+            signupSource: 'City Modal',
+            city: cityText
+          });
+        });
+      }
+    })();
+    </script>
 </body>
 </html>
