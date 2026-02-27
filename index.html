@@ -1483,7 +1483,7 @@ document.getElementById('legalModal').addEventListener('click', function(e){
           var emailEl = document.getElementById('modal-email');
           var fullName = nameEl ? nameEl.value : '';
           var parts = fullName.split(' ');
-          var cityEl = document.querySelector('.modal-city-name, [class*="city"]');
+          var cityEl = document.querySelector('#modal-city-name');
           var cityText = cityEl ? cityEl.textContent.trim() : '';
           sendToSheet({
             firstName: parts[0] || '',
