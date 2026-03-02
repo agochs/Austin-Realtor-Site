@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover West Des Moines, Iowa - a premier upscale suburb with luxury homes, excellent schools, and premium shopping. Find your perfect property with Austin Gochneaur, RE/MAX Real Estate Center.">
+    <meta name="keywords" content="West Des Moines Iowa homes, luxury real estate, Jordan Creek, Valley Junction, Des Moines suburbs">
+    <meta property="og:title" content="West Des Moines, Iowa Real Estate | Austin Gochneaur">
+    <meta property="og:description" content="Explore West Des Moines' premier neighborhoods, highly-rated Valley High School, and vibrant Jordan Creek retail district.">
+    <link rel="canonical" href="https://austingochneaur.com/west-des-moines">
+    <title>West Des Moines, Iowa Real Estate | Austin Gochneaur - RE/MAX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a2a3a;
+            --accent-gold: #c8a97e;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #5a6c7d;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo:hover {
+            color: var(--accent-gold);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(120deg, #1a2a3a 0%, #3a4a5a 50%, #1a2a3a 100%);
+            color: var(--white);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="luxury" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="1.5" fill="rgba(200,169,126,0.1)"/><circle cx="10" cy="10" r="0.8" fill="rgba(200,169,126,0.05)"/><circle cx="50" cy="50" r="0.8" fill="rgba(200,169,126,0.05)"/></pattern></defs><rect width="1200" height="600" fill="url(%23luxury)"/></svg>');
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #d0d0d0;
+        }
+
+        /* Market Snapshot */
+        .market-snapshot {
+            background-color: var(--light-bg);
+            padding: 4rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Neighborhoods Section */
+        .neighborhoods {
+            padding: 4rem 2rem;
+            background-color: var(--white);
+        }
+
+        .neighborhoods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .neighborhood-card {
+            background: linear-gradient(135deg, #f5ede4 0%, #fef9f5 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 3px solid var(--accent-gold);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .neighborhood-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .neighborhood-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Schools Section */
+        .schools {
+            background-color: var(--light-bg);
+            padding: 4rem 2rem;
+        }
+
+        .schools-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .school-info {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .school-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .school-info p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Unique Section */
+        .unique {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #fef9f5 0%, #f8f9fa 100%);
+        }
+
+        .unique-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .unique-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .unique-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(120deg, #1a2a3a 0%, #3a4a5a 50%, #1a2a3a 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #d0d0d0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .cta-btn-primary {
+            background-color: var(--accent-gold);
+            color: var(--primary-color);
+        }
+
+        .cta-btn-primary:hover {
+            background-color: #d9b896;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(200,169,126,0.4);
+        }
+
+        .cta-btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--accent-gold);
+        }
+
+        .cta-btn-secondary:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-info {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .footer-info a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        .footer-info a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: #8a9aaa;
+            margin-top: 1.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .neighborhoods-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .unique-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">Austin Gochneaur</a>
+            <div class="nav-links">
+                <a href="/">Back to Main Site</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>West Des Moines, Iowa</h1>
+            <p>Iowa's Premier Suburb: Luxury Living, Excellence & Sophisticated Dining</p>
+        </div>
+    </section>
+
+    <!-- Market Snapshot -->
+    <section class="market-snapshot">
+        <div class="section-container">
+            <h2 class="section-title">Market Snapshot</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Population</h3>
+                    <div class="value">67,000</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Median Home Price</h3>
+                    <div class="value">$340K</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Premium Positioning</h3>
+                    <div class="value">15-20% above market</div>
+                </div>
+                <div class="stat-card">
+                    <h3>School Rating</h3>
+                    <div class="value">9/10</div>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-light); font-size: 1.05rem;">West Des Moines represents the pinnacle of Iowa suburban living. This community commands premium pricing due to its exceptional schools, upscale amenities, world-class dining and shopping, and sophisticated demographics. Homes here are investments in lifestyle and community excellence.</p>
+        </div>
+    </section>
+
+    <!-- Neighborhoods -->
+    <section class="neighborhoods">
+        <div class="section-container">
+            <h2 class="section-title">Distinctive Neighborhoods</h2>
+            <div class="neighborhoods-grid">
+                <div class="neighborhood-card">
+                    <h3>Jordan Creek ($350Kâ$800K+)</h3>
+                    <p>West Des Moines' crown jewel, Jordan Creek is a master-planned community featuring newer construction homes with contemporary designs and high-end finishes. This neighborhood sits adjacent to the prestigious Jordan Creek retail district, offering unprecedented access to luxury shopping, fine dining, and entertainment. Custom homes, gated communities, and premium lots command top-tier pricing. Perfect for buyers seeking the absolute finest in new construction and upscale living.</p>
+                </div>
+                <div class="neighborhood-card">
+                    <h3>Valley Junction ($250Kâ$500K)</h3>
+                    <p>A charming, historically-rich neighborhood that has undergone a stunning renaissance. Victorian and Craftsman-era homes line tree-shaded streets with genuine walkability and character. Valley Junction's revitalization brought trendy restaurants, independent shops, and a vibrant community feel. This is where sophisticated urbanites choose to live while remaining in a suburb. Strong appreciation potential as the neighborhood continues to attract new investment and young professionals.</p>
+                </div>
+                <div class="neighborhood-card">
+                    <h3>Grand Prairie & Surrounding Areas</h3>
+                    <p>Newer upscale subdivisions with high-end amenities, community centers, and manicured parks. These neighborhoods attract young families and empty-nesters seeking brand-new homes with modern technology and construction standards. Multi-story colonial homes, open floor plans, and quality finishes define this area. Premium location combined with excellent schools makes these neighborhoods highly desirable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schools Section -->
+    <section class="schools">
+        <div class="schools-content">
+            <h2 class="section-title">Schools & Education Excellence</h2>
+            <div class="school-info">
+                <h3>Valley High School - Rating: 9/10</h3>
+                <p><strong>Reputation:</strong> One of Iowa's most prestigious public high schools, Valley consistently ranks among the state's best. The school is known for rigorous academics, excellent test scores, and comprehensive college preparatory programming.</p>
+                <p><strong>Why Families Choose Valley:</strong> Exceptional athletic programs (state championship-caliber teams), advanced placement offerings, strong STEM initiatives, and a prestigious alumni network. The school culture emphasizes academic achievement and well-rounded development.</p>
+                <p><strong>Notable Features:</strong> New state-of-the-art facilities, extensive arts programming, nationally recognized debate team, engineering pathways, and strong scholarship outcomes.</p>
+            </div>
+            <div class="school-info">
+                <h3>West Des Moines Community School District Overall</h3>
+                <p><strong>District Excellence:</strong> Consistently rated among Iowa's top-performing school districts. The district attracts experienced educators and maintains low student-to-teacher ratios. Innovation in curriculum design and early intervention programs ensures student success.</p>
+                <p><strong>Advanced Programming:</strong> The district offers honors programs, gifted education, international baccalaureate tracks, and extensive extracurricular activities across all grade levels. Strong special education services and support for diverse learners.</p>
+                <p><strong>Community Advantage:</strong> High median household income in the district enables strong parental engagement, well-funded programs, and facilities that rival private institutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes West Des Moines Unique -->
+    <section class="unique">
+        <div class="section-container">
+            <h2 class="section-title">What Makes West Des Moines Exceptional</h2>
+            <div class="unique-grid">
+                <div class="unique-item">
+                    <h3>Jordan Creek District</h3>
+                    <p>The most sophisticated shopping, dining, and entertainment destination in Iowa. From luxury retail to award-winning restaurants, Jordan Creek sets the standard for upscale retail experiences. Living nearby provides unmatched convenience to premium amenities.</p>
+                </div>
+                <div class="unique-item">
+                    <h3>Walkable Communities</h3>
+                    <p>Valley Junction and other neighborhoods offer genuine walkabilityâa rarity in Iowa suburbs. Mixed-use development, pedestrian-friendly streets, and vibrant retail create an urban experience with suburban space and schools. This appeals to empty-nesters seeking sophisticated downsizing.</p>
+                </div>
+                <div class="unique-item">
+                    <h3>Culinary Excellence</h3>
+                    <p>West Des Moines has Iowa's best restaurants. James Beard-nominated chefs, innovative cuisine, and world-class wine programs define the dining scene. This demographic sophistication attracts professionals and entrepreneurs who value quality of life beyond traditional suburban metrics.</p>
+                </div>
+                <div class="unique-item">
+                    <h3>Real Estate Investment</h3>
+                    <p>Properties in West Des Moines hold value exceptionally well. The 15-20% premium over comparable suburbs reflects demand from across the Midwest. Homes here appreciate steadily and sell quicklyâa hallmark of truly desirable real estate markets.</p>
+                </div>
+                <div class="unique-item">
+                    <h3>High-Income Demographics</h3>
+                    <p>West Des Moines attracts affluent families, entrepreneurs, and professionals. The median household income significantly exceeds the state average, creating a community of accomplished, educated residents. This demographic composition supports excellent schools and safety.</p>
+                </div>
+                <div class="unique-item">
+                    <h3>Amenity Pipeline</h3>
+                    <p>Continuous development means new trails, parks, and community facilities regularly open. The city invests aggressively in infrastructure, ensuring West Des Moines remains at the forefront of suburban excellence. Future development promises continued appreciation and quality of life improvements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Live in Iowa's Most Prestigious Community</h2>
+            <p>West Des Moines represents the absolute best of suburban living. If you're seeking a combination of excellent schools, sophisticated amenities, upscale living, and strong real estate value, West Des Moines deserves your serious consideration. Let me show you why this community commands premium positioning in the market.</p>
+            <div class="cta-buttons">
+                <a href="tel:(515)415-9752" class="cta-btn cta-btn-primary">Call Austin</a>
+                <a href="mailto:austin.gochneaur@remax.com" class="cta-btn cta-btn-secondary">Email Austin</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <strong>Austin Gochneaur</strong><br>
+                RE/MAX Real Estate Center<br>
+                Des Moines, Iowa
+            </div>
+            <div class="footer-info">
+                <a href="tel:(515)415-9752">(515) 415-9752</a><br>
+                <a href="mailto:austin.gochneaur@remax.com">austin.gochneaur@remax.com</a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Austin Gochneaur, RE/MAX Real Estate Center. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
