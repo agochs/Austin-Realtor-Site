@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Urbandale, Iowa - a vibrant Des Moines suburb with excellent parks, trails, and family-friendly neighborhoods. Work with Austin Gochneaur, RE/MAX Real Estate Center.">
+    <meta name="keywords" content="Urbandale Iowa homes, real estate, buy sell, Des Moines suburbs">
+    <meta property="og:title" content="Urbandale, Iowa Real Estate | Austin Gochneaur">
+    <meta property="og:description" content="Explore Urbandale's 57 parks, 54 miles of trails, and vibrant real estate market with median home prices around $385K.">
+    <link rel="canonical" href="https://austingochneaur.com/urbandale">
+    <title>Urbandale, Iowa Real Estate | Austin Gochneaur - RE/MAX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a2a3a;
+            --accent-gold: #c8a97e;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #5a6c7d;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo:hover {
+            color: var(--accent-gold);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a2a3a 0%, #2d4456 100%);
+            color: var(--white);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+
+        /* Market Snapshot */
+        .market-snapshot {
+            padding: 4rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .value {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        /* Neighborhoods */
+        .neighborhoods {
+            padding: 4rem 2rem;
+        }
+
+        .neighborhoods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .neighborhood-card {
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .neighborhood-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .neighborhood-card p {
+            line-height: 1.8;
+        }
+
+        /* Schools */
+        .schools {
+            padding: 4rem 2rem;
+        }
+
+        .schools-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .school-info {
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .school-info h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .school-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Unique */
+        .unique {
+            padding: 4rem 2rem;
+        }
+
+        .unique-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .unique-item {
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .unique-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* CTA */
+        .cta {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .neighborhoods-grid { grid-template-columns: 1fr; }
+            .unique-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">Austin Gochneaur</a>
+            <div class="nav-links"><a href="/">Back to Main Site</a></div>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Urbandale, Iowa</h1>
+            <p>An Active Community with Parks, Trails &amp; Family-Friendly Living</p>
+        </div>
+    </section>
+    <section class="market-snapshot">
+        <div class="section-container">
+            <h2 class="section-title">Market Snapshot</h2>
+            <div class="stats-grid">
+                <div class="stat-card"><h3>Population</h3><div class="value">48,625</div></div>
+                <div class="stat-card"><h3>Median Home Price</h3><div class="value">$385K</div></div>
+                <div class="stat-card"><h3>Parks &amp; Recreation</h3><div class="value">57 Parks</div></div>
+                <div class="stat-card"><h3>Trail System</h3><div class="value">54 Miles</div></div>
+            </div>
+            <p style="text-align:center;">Urbandale is Iowa's quintessential suburban community, known for its exceptional parks system and outdoor lifestyle.</p>
+        </div>
+    </section>
+    <section class="neighborhoods">
+        <div class="section-container">
+            <h2 class="section-title">Neighborhoods to Explore</h2>
+            <div class="neighborhoods-grid">
+                <div class="neighborhood-card"><h3>Established Neighborhoods</h3><p>Mature trees, well-maintained homes, and strong community connections with convenient access to schools, parks, and shopping.</p></div>
+                <div class="neighborhood-card"><h3>Newer Subdivisions</h3><p>Modern home designs with updated amenities and energy-efficient features near the expanding retail district along 86th Street.</p></div>
+                <div class="neighborhood-card"><h3>Near Living History Farms</h3><p>Larger lots, wooded settings, and proximity to nature with easy access to city services and trails.</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="schools">
+        <div class="schools-content">
+            <h2 class="section-title">Schools &amp; Education</h2>
+            <div class="school-info"><h3>Johnston Community School District</h3><p><strong>Coverage:</strong> Portions of Urbandale</p><p><strong>Why Families Choose It:</strong> Rated A+, excellent academics, strong extracurriculars, serving over 13,000 students.</p></div>
+            <div class="school-info"><h3>West Des Moines Community School District</h3><p><strong>Coverage:</strong> Western portions of Urbandale</p><p><strong>Why Families Choose It:</strong> Premier district, STEM programs, 1:1 technology, consistently ranked among Iowa's best.</p></div>
+        </div>
+    </section>
+    <section class="unique">
+        <div class="section-container">
+            <h2 class="section-title">What Makes Urbandale Unique</h2>
+            <div class="unique-grid">
+                <div class="unique-item"><h3>Trail Paradise</h3><p>54-mile trail system connecting parks, schools, and neighborhoods.</p></div>
+                <div class="unique-item"><h3>Living History Farms</h3><p>Unique outdoor museum preserving Iowa agricultural heritage.</p></div>
+                <div class="unique-item"><h3>Family-Friendly</h3><p>Splash pads, playgrounds, sports facilities, and community centers.</p></div>
+                <div class="unique-item"><h3>Convenient Location</h3><p>Quick access to I-35 and Des Moines metro employment centers.</p></div>
+                <div class="unique-item"><h3>Affordability</h3><p>Outstanding schools, parks, and safety at reasonable home prices.</p></div>
+                <div class="unique-item"><h3>Community Events</h3><p>Farmers markets, outdoor concerts, and holiday celebrations.</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Call Urbandale Home?</h2>
+            <p>I'm here to guide you through every step of buying, selling, or exploring Urbandale real estate.</p>
+            <div class="cta-buttons">
+                <a href="tel:(515)415-9752" class="cta-btn cta-btn-primary">Call Austin</a>
+                <a href="mailto:austin.gochneaur@remax.com" class="cta-btn cta-btn-secondary">Email Austin</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info"><strong>Austin Gochneaur</strong><br>RE/MAX Real Estate Center<br>Des Moines, Iowa</div>
+            <div class="footer-info"><a href="tel:(515)415-9752">(515) 415-9752</a><br><a href="mailto:austin.gochneaur@remax.com">austin.gochneaur@remax.com</a></div>
+            <div class="copyright">&copy; 2026 Austin Gochneaur, RE/MAX Real Estate Center. All rights reserved.</div>
+        </div>
+    </footer>
+</body>
+</html>
