@@ -1067,17 +1067,59 @@
 </section>
 
 <!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; AREAS SERVED &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
-<section id="areas">
-        <div class="areas-header">
-            <span class="section-sub">SEARCH LISTINGS</span>
-            <h2>Search Greater Des Moines &amp; Beyond</h2>
-            <div class="section-divider"></div>
-            <p style="max-width:700px;margin:0 auto 30px;color:#555;font-size:1.05rem;">Browse real-time MLS listings across Ankeny, Urbandale, West Des Moines, Waukee, Johnston, and the entire Des Moines metro. Search by city, price, beds, and more.</p>
+<section class="areas section" id="areas">
+    <div class="container">
+        <div class="areas-header fade-in">
+            <span class="section-label">Areas Served</span>
+            <h2 class="section-heading">Greater Des Moines & Beyond</h2>
+            <div class="divider" style="margin:20px auto 28px;"></div>
         </div>
-        <div style="width:100%;max-width:1200px;margin:0 auto;min-height:700px;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.1);">
-            <iframe src="https://iow.mlsmatrix.com/Matrix/public/IDX.aspx?idx=6383158" width="100%" height="700" frameborder="0" style="border:none;display:block;" title="Search Des Moines MLS Listings"></iframe>
+        <div class="areas-grid">
+            <div class="area-card fade-in" onclick="scrollToIDX('Urbandale')" role="button" tabindex="0" aria-label="View homes for sale in Urbandale" onkeypress="if(event.key==='Enter')scrollToIDX('Urbandale')" style="cursor:pointer">
+                <img src="https://images.unsplash.com/photo-1762374974129-f9266d9c4efc?auto=format&fit=crop&w=600&q=80" alt="Blue two-story suburban home in Urbandale, Iowa" loading="lazy" width="600" height="400">
+                <div class="area-overlay"><h4>Urbandale</h4></div>
+            </div>
+            <div class="area-card fade-in" onclick="scrollToIDX('West Des Moines')" role="button" tabindex="0" aria-label="View homes for sale in West Des Moines" onkeypress="if(event.key==='Enter')scrollToIDX('West Des Moines')" style="cursor:pointer">
+                <img src="https://images.unsplash.com/photo-1647579350413-a6ada4e480ed?auto=format&fit=crop&w=600&q=80" alt="Modern white farmhouse home in West Des Moines, Iowa" loading="lazy" width="600" height="400">
+                <div class="area-overlay"><h4>West Des Moines</h4></div>
+            </div>
+            <div class="area-card fade-in" onclick="scrollToIDX('Ankeny')" role="button" tabindex="0" aria-label="View homes for sale in Ankeny" onkeypress="if(event.key==='Enter')scrollToIDX('Ankeny')" style="cursor:pointer">
+                <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=600&q=80" alt="Brick and stone suburban home in Ankeny, Iowa" loading="lazy" width="600" height="400">
+                <div class="area-overlay"><h4>Ankeny</h4></div>
+            </div>
+            <div class="area-card fade-in" onclick="scrollToIDX('Des Moines')" role="button" tabindex="0" aria-label="View homes for sale in Des Moines" onkeypress="if(event.key==='Enter')scrollToIDX('Des Moines')" style="cursor:pointer">
+                <img src="https://images.unsplash.com/photo-1666058322408-be43487b7b40?auto=format&fit=crop&w=600&q=80" alt="Downtown Des Moines, Iowa skyline at sunset" loading="lazy" width="600" height="400">
+                <div class="area-overlay"><h4>Des Moines</h4></div>
+            </div>
+            <div class="area-card fade-in" onclick="scrollToIDX('Polk City')" role="button" tabindex="0" aria-label="View homes for sale in Polk City" onkeypress="if(event.key==='Enter')scrollToIDX('Polk City')" style="cursor:pointer">
+                <img src="https://images.unsplash.com/photo-1628744448839-a475cc0e90c3?auto=format&fit=crop&w=600&q=80" alt="Modern ranch home in Polk City, Iowa" loading="lazy" width="600" height="400">
+                <div class="area-overlay"><h4>Polk City</h4></div>
+            </div>
+            <div class="area-card fade-in" onclick="scrollToIDX('Grimes')" role="button" tabindex="0" aria-label="View homes for sale in Grimes" onkeypress="if(event.key==='Enter')scrollToIDX('Grimes')" style="cursor:pointer">
+                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80" alt="Single-family home with wrap-around porch in Grimes, Iowa" loading="lazy" width="600" height="400">
+                <div class="area-overlay"><h4>Grimes</h4></div>
+            </div>
+            <div class="area-card fade-in" onclick="scrollToIDX('Waukee')" role="button" tabindex="0" aria-label="View homes for sale in Waukee" onkeypress="if(event.key==='Enter')scrollToIDX('Waukee')" style="cursor:pointer">
+                <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=600&q=80" alt="Beautiful craftsman home in Waukee, Iowa" loading="lazy" width="600" height="400">
+                <div class="area-overlay"><h4>Waukee</h4></div>
+            </div>
+            <div class="area-card fade-in" onclick="scrollToIDX('Johnston')" role="button" tabindex="0" aria-label="View homes for sale in Johnston" onkeypress="if(event.key==='Enter')scrollToIDX('Johnston')" style="cursor:pointer">
+                <img src="https://images.unsplash.com/photo-1592595896551-12b371d546d5?auto=format&fit=crop&w=600&q=80" alt="Two-story home with garage in Johnston, Iowa" loading="lazy" width="600" height="400">
+                <div class="area-overlay"><h4>Johnston</h4></div>
+            </div>
+        </div>    
+        <!-- IDX Search -->
+        <div id="idx-search-container" style="margin-top:50px;">
+            <div style="text-align:center;margin-bottom:20px;">
+                <p id="idx-area-label" style="display:none;font-size:1.1rem;color:#1a2a3a;font-weight:600;margin-bottom:10px;"></p>
+            </div>
+            <div style="width:100%;max-width:1200px;margin:0 auto;min-height:700px;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+                <iframe id="idx-iframe" src="https://iow.mlsmatrix.com/Matrix/public/IDX.aspx?idx=6383158" width="100%" height="700" frameborder="0" style="border:none;display:block;" title="Search Des Moines MLS Listings"></iframe>
+            </div>
         </div>
-    </section>
+
+    </div>
+</section>
 
 <!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; CONTACT &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
 <section class="contact section" id="contact">
@@ -1362,7 +1404,24 @@ document.getElementById('legalModal').addEventListener('click', function(e){
     </style>
     <script>
         var _listingsTargetUrl='';
-        
+        function scrollToIDX(areaName) {
+        const container = document.getElementById('idx-search-container');
+        if (container) {
+            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Show a label indicating which area was selected
+            const label = document.getElementById('idx-area-label');
+            if (label) {
+                label.style.display = 'block';
+                label.textContent = 'Searching ' + areaName + ' \u2014 Use the form below to find listings in ' + areaName + ' and surrounding areas';
+                // Highlight effect
+                label.style.background = '#f0f7ff';
+                label.style.padding = '12px 20px';
+                label.style.borderRadius = '8px';
+                label.style.borderLeft = '4px solid #1a2a3a';
+                setTimeout(function() { label.style.background = '#fafafa'; }, 2000);
+            }
+        }
+    }
         function closeListingsModal(){
             document.getElementById('listings-modal').style.display='none';
             document.body.style.overflow='';
