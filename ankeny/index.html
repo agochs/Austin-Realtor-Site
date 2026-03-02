@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Ankeny, Iowa - Iowa's fastest growing city with Prairie Trail, excellent schools, and thriving new neighborhoods. Find your home with Austin Gochneaur, RE/MAX Real Estate Center.">
+    <meta name="keywords" content="Ankeny Iowa homes, real estate, Prairie Trail, new construction, Des Moines schools">
+    <meta property="og:title" content="Ankeny, Iowa Real Estate | Austin Gochneaur">
+    <meta property="og:description" content="Discover Ankeny's rapid growth, master-planned communities, and outstanding school system with 15 elementary schools.">
+    <link rel="canonical" href="https://austingochneaur.com/ankeny">
+    <title>Ankeny, Iowa Real Estate | Austin Gochneaur - RE/MAX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a2a3a;
+            --accent-gold: #c8a97e;
+            --light-bg: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #5a6c7d;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo:hover {
+            color: var(--accent-gold);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(150deg, #1a2a3a 0%, #2d4456 60%, #1a2a3a 100%);
+            color: var(--white);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="growth" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M25 0 L25 50 M0 25 L50 25" stroke="rgba(200,169,126,0.08)" stroke-width="0.5"/><circle cx="25" cy="25" r="2" fill="rgba(200,169,126,0.15)"/></pattern></defs><rect width="1200" height="600" fill="url(%23growth)"/></svg>');
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #d0d0d0;
+        }
+
+        /* Market Snapshot */
+        .market-snapshot {
+            background-color: var(--light-bg);
+            padding: 4rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Neighborhoods Section */
+        .neighborhoods {
+            padding: 4rem 2rem;
+            background-color: var(--white);
+        }
+
+        .neighborhoods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .neighborhood-card {
+            background: linear-gradient(135deg, #f0f5fa 0%, #faf8f5 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 3px solid var(--accent-gold);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .neighborhood-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .neighborhood-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Schools Section */
+        .schools {
+            background-color: var(--light-bg);
+            padding: 4rem 2rem;
+        }
+
+        .schools-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .school-info {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .school-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .school-info p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Unique Section */
+        .unique {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #faf8f5 0%, #f8f9fa 100%);
+        }
+
+        .unique-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .unique-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .unique-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(150deg, #1a2a3a 0%, #2d4456 60%, #1a2a3a 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #d0d0d0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .cta-btn-primary {
+            background-color: var(--accent-gold);
+            color: var(--primary-color);
+        }
+
+        .cta-btn-primary:hover {
+            background-color: #d9b896;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(200,169,126,0.4);
+        }
+
+        .cta-btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--accent-gold);
+        }
+
+        .cta-btn-secondary:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-info {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .footer-info a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        .footer-info a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: #8a9aaa;
+            margin-top: 1.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .neighborhoods-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .unique-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">Austin Gochneaur</a>
+            <div class="nav-links">
+                <a href="/">Back to Main Site</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Ankeny, Iowa</h1>
+            <p>Iowa's Fastest Growing City: Modern Master-Planned Communities & Excellent Schools</p>
+        </div>
+    </section>
+
+    <!-- Market Snapshot -->
+    <section class="market-snapshot">
+        <div class="section-container">
+            <h2 class="section-title">Market Snapshot</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Population</h3>
+                    <div class="value">74,458</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Median Home Price</h3>
+                    <div class="value">$340K</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Growth Rate</h3>
+                    <div class="value">Fastest in Iowa</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Schools</h3>
+                    <div class="value">15 Elementary</div>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-light); font-size: 1.05rem;">Ankeny has emerged as Iowa's premier growth corridor, attracting young families, professionals, and businesses seeking new development opportunities. The city's strategic location, master-planned neighborhoods, and expanding school system make it the destination for buyers seeking growth potential and modern living.</p>
+        </div>
+    </section>
+
+    <!-- Neighborhoods -->
+    <section class="neighborhoods">
+        <div class="section-container">
+            <h2 class="section-title">Master-Planned Neighborhoods</h2>
+            <div class="neighborhoods-grid">
+                <div class="neighborhood-card">
+                    <h3>Prairie Trail</h3>
+                    <p>Ankeny's crown jewel, Prairie Trail represents the future of master-planned community development. This walkable, mixed-use neighborhood features modern amenities, trail systems, parks, and retail centers. Homes range from townhomes to custom estates. The development emphasizes sustainability, active lifestyles, and community connection. Prairie Trail attracts buyers seeking the best in contemporary suburban design.</p>
+                </div>
+                <div class="neighborhood-card">
+                    <h3>Northwest Ankeny</h3>
+                    <p>Quieter, more spacious neighborhoods with larger lots and natural settings. Perfect for families seeking peace and nature access while remaining in an expanding community. This area features established residential patterns with newer development filling in. More affordable than Prairie Trail while maintaining excellent schools and access to city services.</p>
+                </div>
+                <div class="neighborhood-card">
+                    <h3>Northeast Ankeny & Centennial</h3>
+                    <p>Combines newer construction homes with proximity to excellent schools and shopping. Centennial and Aspen Ridge feature modern subdivisions with quality builders and contemporary home designs. These neighborhoods appeal to young families prioritizing school access and new construction. Strong appreciation potential due to strategic location and excellent demographics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schools Section -->
+    <section class="schools">
+        <div class="schools-content">
+            <h2 class="section-title">Outstanding School System</h2>
+            <div class="school-info">
+                <h3>Ankeny Community School District - Rapid Expansion</h3>
+                <p><strong>Scale:</strong> 15 elementary schools, 7 middle schools, 3 high schoolsâone of Iowa's largest and fastest-expanding districts.</p>
+                <p><strong>Growth Infrastructure:</strong> The district invests heavily in new school construction and teacher recruitment to manage rapid growth. New facilities incorporate modern educational design, technology, and sustainability features. Class sizes are carefully managed to maintain educational quality despite population growth.</p>
+                <p><strong>Academic Excellence:</strong> Strong standardized test scores, robust advanced placement programs, and comprehensive special education services. The district attracts experienced educators and provides extensive professional development.</p>
+            </div>
+            <div class="school-info">
+                <h3>Why Families Choose Ankeny Schools</h3>
+                <p><strong>Quality During Growth:</strong> Despite explosive growth, the district maintains academic excellence. New schools open with modern facilities and experienced staff, ensuring quality remains high during expansion phases.</p>
+                <p><strong>Diverse Programs:</strong> Comprehensive offerings including STEM pathways, arts programs, career technical education, and athletics. Families find strong programs regardless of student interests.</p>
+                <p><strong>Modern Facilities:</strong> New school construction means updated technology, efficient buildings, and spaces designed for 21st-century learning. Many students experience brand-new school buildings with cutting-edge amenities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Ankeny Unique -->
+    <section class="unique">
+        <div class="section-container">
+            <h2 class="section-title">Why Ankeny Leads Iowa Growth</h2>
+            <div class="unique-grid">
+                <div class="unique-item">
+                    <h3>Fastest Growth Trajectory</h3>
+                    <p>Year after year, Ankeny outpaces Iowa growth statistics. This momentum creates strong real estate appreciation, business opportunities, and expanding amenities. Being part of Iowa's growth story offers tremendous long-term value.</p>
+                </div>
+                <div class="unique-item">
+                    <h3>Master-Planned Excellence</h3>
+                    <p>Unlike haphazard suburban sprawl, Ankeny's growth follows strategic master plans emphasizing walkability, community centers, and integrated retail. This thoughtful development creates more valuable, desirable neighborhoods.</p>
+                </div>
+                <div class="unique-item">
+                    <h3>Modern Infrastructure</h3>
+                    <p>New development means new utilities, fiber internet, and modern road systems. Unlike aging suburbs, Ankeny's infrastructure keeps pace with growth. This supports property values and quality of life.</p>
+                </div>
+                <div class="unique-item">
+                    <h3>Diverse Housing Options</h3>
+                    <p>From townhomes to luxury estates, Ankeny offers choice. Young professionals find urban-style living, families find spacious suburban homes, and empty-nesters find walkable communities. This diversity drives sustained demand.</p>
+                </div>
+                <div class="unique-item">
+                    <h3>Employment Hub</h3>
+                    <p>Major employers including Wells Fargo, Ruan Transportation, and healthcare systems create local job opportunities. Growing employment keeps attracting talented professionals, sustaining population growth and real estate demand.</p>
+                </div>
+                <div class="unique-item">
+                    <h3>Investment Opportunity</h3>
+                    <p>With Iowa's fastest growth rate, Ankeny real estate offers appreciation potential exceeding slower-growth suburbs. Early movers benefit from community establishment and rising property values. This is where Iowa's future is being built.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Invest in Ankeny's Booming Future</h2>
+            <p>Ankeny represents Iowa's growth story. Whether you're a first-time homebuyer seeking modern neighborhoods, a growing family needing expanding schools, or an investor recognizing appreciation potential, Ankeny deserves serious consideration. Let me show you the neighborhoods and opportunities that make this city Iowa's premier growth destination.</p>
+            <div class="cta-buttons">
+                <a href="tel:(515)415-9752" class="cta-btn cta-btn-primary">Call Austin</a>
+                <a href="mailto:austin.gochneaur@remax.com" class="cta-btn cta-btn-secondary">Email Austin</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <strong>Austin Gochneaur</strong><br>
+                RE/MAX Real Estate Center<br>
+                Des Moines, Iowa
+            </div>
+            <div class="footer-info">
+                <a href="tel:(515)415-9752">(515) 415-9752</a><br>
+                <a href="mailto:austin.gochneaur@remax.com">austin.gochneaur@remax.com</a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Austin Gochneaur, RE/MAX Real Estate Center. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
