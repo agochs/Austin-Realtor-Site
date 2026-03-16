@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Austin Gochenaur Real Estate | March 2026 Market Newsletter</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* ââ COLOR PALETTE (matches austingochneaurrealestate.com) ââ
+     Navy:     #1E2D3D  (header/footer dark)
+     Navy-Lt:  #2A3F54  (secondary dark)
+     Gold:     #C5A55A  (primary accent)
+     Gold-Lt:  #D4BB7C  (hover/light accent)
+     Cream:    #FAF7F2  (page background)
+     Warm-Wht: #FFFFFF  (card backgrounds)
+     Text:     #2E2E2E  (body text)
+     Text-Lt:  #5A5A5A  (secondary text)
+  ââ */
+
+  body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    background: #F0ECE4;
+    color: #2E2E2E;
+    line-height: 1.6;
+  }
+
+  .newsletter-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #FAF7F2;
+  }
+
+  /* ââ HEADER ââ */
+  .header {
+    background: linear-gradient(135deg, #1E2D3D 0%, #16222E 100%);
+    padding: 36px 40px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #C5A55A, #D4BB7C, #C5A55A);
+  }
+  .header-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C5A55A;
+    margin-bottom: 6px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+    font-style: italic;
+  }
+  .header .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .header .agent-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 16px;
+  }
+  .header .agent-name em {
+    color: #C5A55A;
+    font-style: italic;
+  }
+  .header .agent-site {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 2px;
+  }
+  .header .agent-site a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+  }
+
+  /* ââ NAV BAR ââ */
+  .nav-bar {
+    background: #C5A55A;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+  }
+  .nav-bar span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #1E2D3D;
+  }
+
+  /* ââ INTRO ââ */
+  .intro {
+    padding: 32px 40px 20px;
+    border-bottom: 1px solid #E8E2D6;
+  }
+  .intro p {
+    font-size: 15px;
+    color: #5A5A5A;
+  }
+
+  /* ââ SECTION HEADERS ââ */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 28px 40px 12px;
+  }
+  .section-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .section-icon.national { background: #1E2D3D; color: #C5A55A; }
+  .section-icon.local { background: #C5A55A; color: #1E2D3D; }
+  .section-icon.outlook { background: #1E2D3D; color: #C5A55A; }
+  .section-header h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1E2D3D;
+  }
+
+  /* ââ CONTENT ââ */
+  .section-body {
+    padding: 0 40px 24px;
+  }
+  .section-body p {
+    font-size: 14.5px;
+    color: #444;
+    margin-bottom: 14px;
+  }
+
+  /* ââ STAT CARDS ââ */
+  .stat-row {
+    display: flex;
+    gap: 12px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+  }
+  .stat-card {
+    flex: 1;
+    min-width: 140px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 18px 16px;
+    text-align: center;
+    border: 1px solid #E8E2D6;
+    box-shadow: 0 2px 8px rgba(30,45,61,0.05);
+  }
+  .stat-card .label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 6px;
+  }
+  .stat-card .value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: #1E2D3D;
+  }
+  .stat-card .change {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .stat-card .change.up { color: #4A7C59; }
+  .stat-card .change.down { color: #A0522D; }
+  .stat-card .change.neutral { color: #888; }
+
+  /* ââ HIGHLIGHT BOX ââ */
+  .highlight-box {
+    background: linear-gradient(135deg, #F5F0E6, #EDE7DA);
+    border-left: 4px solid #C5A55A;
+    border-radius: 0 8px 8px 0;
+    padding: 18px 22px;
+    margin: 16px 0;
+  }
+  .highlight-box.red {
+    background: linear-gradient(135deg, #F0EBE0, #E8E2D6);
+    border-left-color: #1E2D3D;
+  }
+  .highlight-box.green {
+    background: linear-gradient(135deg, #EFF5EE, #E4EDDF);
+    border-left-color: #4A7C59;
+  }
+  .highlight-box p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+  }
+  .highlight-box strong {
+    color: #1E2D3D;
+  }
+  .highlight-box.red strong {
+    color: #1E2D3D;
+  }
+
+  /* ââ DIVIDER ââ */
+  .divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #C5A55A, transparent);
+    margin: 8px 40px;
+    border-radius: 2px;
+  }
+
+  /* ââ SOURCES ââ */
+  .sources {
+    padding: 24px 40px;
+    background: #F0EBE0;
+    border-top: 1px solid #E8E2D6;
+  }
+  .sources h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1E2D3D;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .sources ul {
+    list-style: none;
+    padding: 0;
+  }
+  .sources li {
+    font-size: 12px;
+    color: #777;
+    padding: 3px 0;
+  }
+  .sources li a {
+    color: #8B7234;
+    text-decoration: none;
+  }
+  .sources li a:hover {
+    color: #C5A55A;
+    text-decoration: underline;
+  }
+
+  /* ââ FOOTER ââ */
+  .footer {
+    background: linear-gradient(135deg, #1E2D3D 0%, #16222E 100%);
+    padding: 28px 40px;
+    text-align: center;
+  }
+  .footer .agent-info {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+  .footer .brokerage {
+    font-size: 12px;
+    font-weight: 600;
+    color: #C5A55A;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+  .footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+  }
+  .footer a {
+    color: #C5A55A;
+    text-decoration: none;
+  }
+
+  /* ââ RESPONSIVE ââ */
+  @media (max-width: 600px) {
+    .header, .nav-bar, .intro, .section-header, .section-body, .sources, .footer {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .divider { margin-left: 20px; margin-right: 20px; }
+    .stat-row { flex-direction: column; }
+    .header h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="newsletter-wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-brand">RE/MAX Real Estate Center</div>
+    <h1>Monthly Market Report</h1>
+    <div class="subtitle">MARCH 2026 EDITION</div>
+    <div class="agent-name">Austin <em>Gochneaur</em></div>
+    <div class="agent-site"><a href="https://austingochneaurrealestate.com">austingochneaurrealestate.com</a></div>
+  </div>
+
+  <!-- NAV -->
+  <div class="nav-bar">
+    <span>National Snapshot</span>
+    <span>|</span>
+    <span>DSM Metro Deep Dive</span>
+    <span>|</span>
+    <span>Market Outlook</span>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <p>Welcome to the March edition of your monthly market update. Spring is right around the corner, and the housing market is sending some interesting signals. Whether you're thinking about buying, selling, or just staying informed, here's what you need to know this month&mdash;nationally and right here in the Des Moines metro.</p>
+  </div>
+
+  <!-- âââââââââââââââââââââââââââââââââââââââ -->
+  <!-- NATIONAL SNAPSHOT -->
+  <!-- âââââââââââââââââââââââââââââââââââââââ -->
+  <div class="section-header">
+    <div class="section-icon national">&#127963;</div>
+    <h2>National Snapshot</h2>
+  </div>
+
+  <div class="section-body">
+
+    <h3 style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:#1E2D3D; margin-bottom:10px;">Mortgage Rates</h3>
+
+    <p>Mortgage rates ticked up in early March after dipping below 6% briefly at the end of February. The 30-year fixed-rate mortgage averaged <strong>6.11%</strong> for the week ending March 12, up from 6.00% the prior week, according to Freddie Mac. By March 16, Bankrate pegged the national average 30-year fixed rate at <strong>6.27%</strong>.</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="label">30-Yr Fixed</div>
+        <div class="value">6.11%</div>
+        <div class="change up">&#9650; from 6.00% prior week</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">15-Yr Fixed</div>
+        <div class="value">5.50%</div>
+        <div class="change up">&#9650; from 5.43% prior week</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">YoY Change</div>
+        <div class="value" style="color:#4A7C59;">&#8595;</div>
+        <div class="change down" style="color:#4A7C59;">Down from 6.65% a year ago</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p><strong>Why are rates rising?</strong> Geopolitical tensions from the conflict in Iran have constricted oil supply, pushing oil prices and bond yields higher. The 10-year Treasury yield climbed above 4.16% in early March after hitting a low of 3.96% on Feb. 27. Since mortgage rates are closely tied to bond yields, this upward pressure is being felt directly by buyers.</p>
+    </div>
+
+    <p>The silver lining: rates are still meaningfully lower than a year ago when the 30-year fixed sat at 6.65%. The forecast for 2026 from the Mortgage Bankers Association and Fannie Mae puts the year's average around <strong>6.0%&ndash;6.1%</strong>, with potential dips to 5.7% if economic conditions shift favorably.</p>
+
+    <h3 style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:#1E2D3D; margin: 20px 0 10px;">Home Sales &amp; Pricing</h3>
+
+    <p>The National Association of Realtors (NAR) reported that existing-home sales rose <strong>1.7%</strong> in February to a seasonally adjusted annual rate of 4.09 million units. The median existing-home price came in at <strong>$398,000</strong>, up a modest 0.3% year-over-year&mdash;marking 32 consecutive months of annual price gains.</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="label">Median Price</div>
+        <div class="value">$398K</div>
+        <div class="change up">&#9650; 0.3% YoY</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Existing Sales</div>
+        <div class="value">4.09M</div>
+        <div class="change up">&#9650; 1.7% MoM</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Inventory</div>
+        <div class="value">3.8 mo</div>
+        <div class="change neutral">&#9644; Unchanged MoM</div>
+      </div>
+    </div>
+
+    <p>Nationally, inventory stands at an estimated 1.29 million units, up 4.9% from a year ago. Housing affordability improved for the eighth consecutive month, with NAR's Housing Affordability Index reaching 117.6 in February&mdash;the highest since March 2022. However, new construction is off to a slow start in 2026, with single-family housing starts down 6.5% year-over-year.</p>
+
+    <div class="highlight-box green">
+      <p><strong>Midwest leads the nation:</strong> The Midwest has solidified its position as the country's strongest region for home price growth, averaging 3.56% year-over-year appreciation. Iowa's neighbors are leading the way&mdash;Illinois at +4.91%, Wisconsin at +4.78%, and Nebraska at +4.75%.</p>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- âââââââââââââââââââââââââââââââââââââââ -->
+  <!-- DSM METRO DEEP DIVE -->
+  <!-- âââââââââââââââââââââââââââââââââââââââ -->
+  <div class="section-header">
+    <div class="section-icon local">&#127968;</div>
+    <h2>Des Moines Metro Deep Dive</h2>
+  </div>
+
+  <div class="section-body">
+
+    <p>The Des Moines metro kicked off 2026 with a mix of encouraging and cautionary signals. Inventory is healthier than it's been in years, buyer activity is picking up, and the metro remains one of the most affordable markets in the country. Here's the breakdown.</p>
+
+    <h3 style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:#C5A55A; margin-bottom:10px;">Home Values &amp; Prices</h3>
+
+    <p>Zillow's Home Value Index puts the typical Des Moines home at <strong>$190,948</strong>, up 5.5% over the past year. Meanwhile, across the broader metro, the median home price reached <strong>$285,000</strong> in Q1 2026&mdash;a 6.2% year-over-year increase according to market reports. This healthy appreciation reflects the metro's sustained demand and relative affordability compared to national benchmarks.</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="label">Typical Home Value</div>
+        <div class="value">$191K</div>
+        <div class="change up">&#9650; 5.5% YoY</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Metro Median</div>
+        <div class="value">$285K</div>
+        <div class="change up">&#9650; 6.2% YoY</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">vs National Median</div>
+        <div class="value" style="font-size:18px;">28% Below</div>
+        <div class="change neutral">National: $398K</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:#C5A55A; margin: 20px 0 10px;">Inventory &amp; New Listings</h3>
+
+    <p>This is the big story. Active inventory in the Des Moines area has climbed above <strong>4,200 listings</strong>&mdash;the first time we've seen levels like this since 2019. That's a significant shift from the ultra-tight conditions buyers endured in 2021&ndash;2023. The metro currently sits at approximately <strong>2.8 months of supply</strong>, up 15% from Q4 2025. While this still favors sellers, we're moving toward a more balanced playing field.</p>
+
+    <p>Statewide, Iowa saw new listings climb to <strong>3,072</strong> in January 2026, a 2.7% increase year-over-year, with active listings reaching <strong>8,308</strong>&mdash;up 12.1% from last year. New construction permits across the metro have also jumped 18% year-over-year, with developers building both single-family and multi-family to meet demand.</p>
+
+    <div class="highlight-box red">
+      <p><strong>What this means for sellers:</strong> More inventory means more competition. Pricing your home right from day one is more important than ever. Overpriced homes are sitting longer&mdash;days on market have increased to roughly 39 days statewide (up from 37 last year). Work with your agent to develop a smart pricing strategy.</p>
+    </div>
+
+    <h3 style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:#C5A55A; margin: 20px 0 10px;">Sales Activity &amp; Market Momentum</h3>
+
+    <p>Sales volume in the Des Moines metro surged <strong>18%</strong> in Q1 2026 compared to the same period last year&mdash;the strongest first-quarter performance in over four years. In January alone, 155 homes closed in Des Moines proper, up from 149 last year. Statewide, the median sale price rose to <strong>$231,500</strong> in January, a 7.7% annual increase.</p>
+
+    <p>Les Sulgrove, Iowa REALTORS&reg; Statewide Housing Analyst and a 35+ year veteran of the Des Moines market, has been tracking rising pending sales as a key indicator. His weekly market reports on the <a href="https://www.youtube.com/@LesSulgroveSimplyDesMoines" style="color:#1E2D3D;">SimplyDesMoines YouTube channel</a> highlight that the "dam is starting to break" with pending activity accelerating&mdash;a leading indicator that closed sales will continue climbing into spring.</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="label">Q1 Sales Volume</div>
+        <div class="value">&#9650; 18%</div>
+        <div class="change up">Strongest Q1 in 4+ years</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Active Listings</div>
+        <div class="value">4,200+</div>
+        <div class="change up">Back to 2019 levels</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">IA Median Price</div>
+        <div class="value">$232K</div>
+        <div class="change up">&#9650; 7.7% YoY (Jan)</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:#C5A55A; margin: 20px 0 10px;">Days on Market</h3>
+
+    <p>Homes in the Des Moines metro are going under contract in about <strong>22 days</strong> on average according to Zillow, though well-priced properties in hot neighborhoods like Beaverdale, West Des Moines, and Ankeny continue to move faster. Statewide, the average sits at 39 days&mdash;a slight increase from last year, reflecting the healthier inventory environment giving buyers a bit more breathing room.</p>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- âââââââââââââââââââââââââââââââââââââââ -->
+  <!-- LOOKING AHEAD -->
+  <!-- âââââââââââââââââââââââââââââââââââââââ -->
+  <div class="section-header">
+    <div class="section-icon outlook">&#128200;</div>
+    <h2>Looking Ahead: Spring 2026</h2>
+  </div>
+
+  <div class="section-body">
+
+    <p>The spring market is shaping up to be the most active we've seen in a few years. Here's what I'm watching:</p>
+
+    <p><strong>Rates may ease.</strong> If geopolitical tensions cool and inflation continues its downward trend, we could see rates dip back toward the mid-to-low 5s later this year. Bankrate projects the 2026 average around 6.1%, with the possibility of rates touching 5.7%.</p>
+
+    <p><strong>Inventory will keep growing.</strong> More listings are coming to market, and new construction is ramping up across the metro. This is great news for buyers who've been waiting on the sidelines. For sellers, it means a strategic approach to pricing and presentation will be key.</p>
+
+    <p><strong>Des Moines remains a standout.</strong> Our metro continues to punch above its weight in affordability, job growth, and quality of life. With the Midwest leading the nation in price appreciation and Des Moines consistently ranking among the most livable metros in the country, this is still a terrific place to invest in real estate.</p>
+
+    <div class="highlight-box green">
+      <p><strong>Thinking about making a move?</strong> Whether you're a first-time buyer looking to take advantage of improved inventory, a homeowner curious about what your property is worth, or an investor eyeing the Des Moines market&mdash;I'd love to chat. Reach out anytime at <a href="https://austingochneaurrealestate.com" style="color:#1E2D3D;">austingochneaurrealestate.com</a>.</p>
+    </div>
+
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sources">
+    <h3>Data Sources</h3>
+    <ul>
+      <li><a href="https://www.freddiemac.com/pmms" target="_blank">Freddie Mac Primary Mortgage Market Survey</a> &mdash; Weekly mortgage rate averages</li>
+      <li><a href="https://www.bankrate.com/mortgages/mortgage-rates/" target="_blank">Bankrate</a> &mdash; Daily national mortgage rate data</li>
+      <li><a href="https://fortune.com/article/current-mortgage-rates-03-16-2026/" target="_blank">Fortune / Optimal Blue</a> &mdash; Daily mortgage rate tracking</li>
+      <li><a href="https://www.nar.realtor/research-and-statistics/housing-statistics/existing-home-sales" target="_blank">National Association of Realtors (NAR)</a> &mdash; Existing-home sales, median price, inventory</li>
+      <li><a href="https://www.globenewswire.com/news-release/2026/03/10/3253010/0/en/NAR-Existing-Home-Sales-Report-Shows-1-7-Increase-in-February.html" target="_blank">NAR / GlobeNewsWire</a> &mdash; February 2026 existing-home sales report</li>
+      <li><a href="https://www.cotality.com/insights/articles/us-home-price-insights-march-2026" target="_blank">Cotality (formerly CoreLogic)</a> &mdash; US home price insights, regional data</li>
+      <li><a href="https://www.realestatenews.com/2026/03/12/economic-unease-threatens-early-year-housing-market-momentum" target="_blank">Real Estate News</a> &mdash; National market momentum analysis</li>
+      <li><a href="https://www.zillow.com/home-values/17759/des-moines-ia/" target="_blank">Zillow</a> &mdash; Des Moines home value index, days to pending</li>
+      <li><a href="https://www.dmaar.com/news/housing-stats" target="_blank">Des Moines Area Association of REALTORS (DMAAR)</a> &mdash; Local market statistics</li>
+      <li><a href="https://iowarealtors.com/blog/housing-stats/strong-start-iowa-housing-market-builds-momentum-in-january/" target="_blank">Iowa REALTORS&reg;</a> &mdash; Statewide housing statistics, January 2026</li>
+      <li><a href="https://www.jakenfinancegroup.com/iowa-real-estate-market-report-q1-2026-trends" target="_blank">Jaken Finance Group</a> &mdash; Iowa Q1 2026 real estate market trends</li>
+      <li><a href="https://www.youtube.com/@LesSulgroveSimplyDesMoines" target="_blank">Les Sulgrove / SimplyDesMoines</a> &mdash; Weekly Des Moines &amp; Central Iowa market video reports</li>
+    </ul>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="agent-info">Austin <em style="font-style:italic; color:#C5A55A;">Gochneaur</em></div>
+    <div class="brokerage">RE/MAX Real Estate Center</div>
+    <p style="color: rgba(255,255,255,0.6); font-size: 12px; margin-bottom: 4px;">4820 100th St #101, Urbandale, IA 50322</p>
+    <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 2px;">Cell: (515) 313-8768</p>
+    <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 4px;">Office: (515) 729-2879</p>
+    <p><a href="https://austingochneaurrealestate.com">austingochneaurrealestate.com</a></p>
+    <p style="margin-top: 12px; font-size: 11px; color: rgba(255,255,255,0.4);">Data is sourced from third-party providers and believed to be accurate as of publication. This newsletter is for informational purposes only and does not constitute financial or legal advice. &copy; 2026 Austin Gochneaur. All rights reserved.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
